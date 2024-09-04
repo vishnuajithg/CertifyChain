@@ -8,7 +8,7 @@ CertifyChain was developed to address the challenges of certificate authenticity
 
 ## 🛠️ Built With
 
-  ![HTML](https://img.shields.io/badge/HTML-000000?style=flat&logo=html5&logoColor=E34F26)
+  ![HTML](https://img.shields.io/badge/HTML-000000?style=flat&logo=html5&logoColor=E34F26&logoHeight=40)
   ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-38B2AC?style=flat&logo=tailwindcss&logoColor=white)
  ![React JS](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)
   ![Node JS](https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white)
