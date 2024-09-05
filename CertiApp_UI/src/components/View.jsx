@@ -3,6 +3,10 @@ import { useParams } from 'react-router-dom';
 import { BrowserProvider, Contract } from 'ethers'
 import { abi } from "../scData/Cert.json";
 import { CertModuleCert } from "../scData/deployed_addresses.json";
+import sig  from '../img/signature.png';
+import logo  from '../img/logo.png';
+
+
 
 const View = () => {
   const { id } = useParams();
@@ -18,9 +22,10 @@ const View = () => {
         // console.log("Data-Retrieved:",SearchId, name, course, grade, date)
         // const signer = await provider.getSigner();
         const instance  = new Contract(CertModuleCert, abi,provider);
-        const data = await instance.Certificates(1);
+        const data = await instance.Certificates(id);
         console.log("Tx Data:",data);
         console.log("Search ID:", id)
+        console.log('Certificate data:', data.id, data.name, data.course, data.grade, data.date);
 
         
         // if (!res.ok) {
@@ -45,88 +50,25 @@ const View = () => {
   }
 
   return (
-    <div class="container pm-certificate-container">
-    <div class="outer-border"></div>
-    <div class="inner-border"></div>
-    
-    <div class="pm-certificate-border col-xs-12">
-      <div class="row pm-certificate-header">
-        <div class="pm-certificate-title cursive col-xs-12 text-center">
-          <h2>Buffalo Public Schools Certificate of Completion</h2>
-        </div>
+   <>
+   <div className="flex justify-center items-center h-screen">
+   {/* <div class="border-solid border-2 border-indigo-600 ..."></div> */}
+      <div className="ring-offset-2 ring-2 ring-[#BF9B30] ring-2 rounded border-8 m-0 border-solid border-2 border-[#BF9B30] p-16 w-3/4 h-3/4  bg-amber-50 ...">
+        <center><img src={logo} className='w-[50px] mt-[-40px] mb-5'  alt="CertiApp Logo" /></center>
+        <h1 className="text-5xl font-serif font-bold mb-2 text-center">CERTIFICATE</h1>
+        <h2 className="text-2xl font-serif font-bold mb-10 text-center italic">OF ACHIEVEMENT</h2>
+        <p className='text-center text-[18px] mb-3'>This is to certify that</p>
+        <h1 className="text-5xl font-serif font-bold mb-4 text-center italic">{(certificateData.name).toUpperCase()}</h1>
+        <p className="mb-6 text-center mt-[-20px]">__________________________________________________________________________________________</p>
+        <p className="text-center text-[18px] mt-[-20px]">has successfully completed the requirements for <b>{certificateData.course}</b> with dedication and commitment, </p>
+        <p className="text-center text-[18px]">achieving a grade <b>{certificateData.grade}. </b>In recognition of your hard work and achievement, we proudly present this certificate. </p>
+        <p className='text-center text-[18px] '>Your efforts in mastering the skills and knowledge taught in this program will contribute to your continued success and growth.</p>
+        <p className="mb-6 text-[18px] mt-24 float-left ml-[70px]">Awarded on: <b>{certificateData.date}</b></p>
+        <img src={sig} className="w-[60px] mt-[60px] ml-[1000px]" alt="Signature" />
       </div>
-
-      <div class="row pm-certificate-body">
-        
-        <div class="pm-certificate-block">
-            <div class="col-xs-12">
-              <div class="row">
-                <div class="col-xs-2">empty</div>
-                <div class="pm-certificate-name underline margin-0 col-xs-8 text-center">
-                  <span class="pm-name-text bold">TrueNorth Administrator</span>
-                </div>
-                <div class="col-xs-2">empty</div>
-              </div>
-            </div>          
-
-            <div class="col-xs-12">
-              <div class="row">
-                <div class="col-xs-2">empty</div>
-                <div class="pm-earned col-xs-8 text-center">
-                  <span class="pm-earned-text padding-0 block cursive">has earned</span>
-                  <span class="pm-credits-text block bold sans">PD175: 1.0 Credit Hours</span>
-                </div>
-                <div class="col-xs-2">empty</div>
-                <div class="col-xs-12"></div>
-              </div>
-            </div>
-            
-            <div class="col-xs-12">
-              <div class="row">
-                <div class="col-xs-2">empty</div>
-                <div class="pm-course-title col-xs-8 text-center">
-                  <span class="pm-earned-text block cursive">while completing the training course entitled</span>
-                </div>
-                <div class="col-xs-2">empty</div>
-              </div>
-            </div>
-
-            <div class="col-xs-12">
-              <div class="row">
-                <div class="col-xs-2">empty</div>
-                <div class="pm-course-title underline col-xs-8 text-center">
-                  <span class="pm-credits-text block bold sans">BPS PGS Initial PLO for Principals at Cluster Meetings</span>
-                </div>
-                <div class="col-xs-2">empty</div>
-              </div>
-            </div>
-        </div>       
-        
-        <div class="col-xs-12">
-          <div class="row">
-            <div class="pm-certificate-footer">
-                <div class="col-xs-4 pm-certified col-xs-4 text-center">
-                  <span class="pm-credits-text block sans">Buffalo City School District</span>
-                  <span class="pm-empty-space block underline"></span>
-                  <span class="bold block">Crystal Benton Instructional Specialist II, Staff Development</span>
-                </div>
-                <div class="col-xs-4">
-                  empty
-                </div>
-                <div class="col-xs-4 pm-certified col-xs-4 text-center">
-                  <span class="pm-credits-text block sans">Date Completed</span>
-                  <span class="pm-empty-space block underline"></span>
-                  <span class="bold block">DOB: </span>
-                  <span class="bold block">Social Security # (last 4 digits)</span>
-                </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
     </div>
-  </div>
+
+   </>
   );
 };
 
