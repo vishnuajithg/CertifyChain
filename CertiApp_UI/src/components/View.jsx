@@ -46,12 +46,12 @@ const View = () => {
   }
 
   if (!certificateData) {
-    return <div>Loading...</div>;
+    return <div className="flex justify-center items-center  h-[83vh]">Loading...</div>;
   }
 
   return (
    <>
-   <div className="flex justify-center items-center h-screen">
+   <div className="flex justify-center items-center  h-[83vh]">
    {/* <div class="border-solid border-2 border-indigo-600 ..."></div> */}
       <div className="ring-offset-2 ring-2 ring-[#BF9B30] ring-2 rounded border-8 m-0 border-solid border-2 border-[#BF9B30] p-16 w-3/4 h-3/4  bg-amber-50 ...">
         <center><img src={logo} className='w-[50px] mt-[-40px] mb-5'  alt="CertiApp Logo" /></center>
@@ -67,7 +67,9 @@ const View = () => {
         <img src={sig} className="w-[60px] mt-[60px] ml-[1000px]" alt="Signature" />
       </div>
     </div>
-
+    <div className='flex justify-center mt-[-60px] mb-5'> <a href="/" className="bg-[#A04747] hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
+        Go to Home
+      </a></div>
    </>
   );
 };

@@ -70,9 +70,8 @@ const IssueCertificate = () => {
 
   return (
     <>
-      <div className="container mx-auto p-8">
-        <h1 className="text-4xl font-bold text-center mb-8">Certificate Dapp</h1>
-        <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg">
+      <div className="container mx-auto p-8 h-[83vh]">
+        <div className="max-w-md mt-16 mx-auto bg-white p-6 rounded-lg shadow-lg">
           <h3 className="text-3xl font-bold text-center mb-4">Issue New Certificate</h3>
           <form onSubmit={submitForm}>
             <div className="space-y-4">
@@ -150,7 +149,7 @@ const IssueCertificate = () => {
               </div>
               <div className="text-center">
                 <button
-                  className="w-full bg-blue-700 hover:bg-orange-400 text-white font-bold py-2 px-4 rounded-md transition duration-300"
+                  className="w-full bg-[#A04747]  hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-md transition duration-300"
                   type="submit"
                 >
                   Issue Certificate
