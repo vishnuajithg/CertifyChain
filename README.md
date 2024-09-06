@@ -53,7 +53,8 @@ To interact with the blockchain and deploy smart contracts, follow these steps:
 
 1. Install Hardhat and the required dependencies:
     ```bash
-    npm install -D hardhat @nomicfoundation/hardhat-toolbox dotenv
+    cd CertifyChain
+    npm install -D hardhat @nomicfoundation/hardhat-toolbox
     ```
 
 2. Set up your environment variables by creating a `.env` file in the root of the project with the following content:
@@ -61,7 +62,7 @@ To interact with the blockchain and deploy smart contracts, follow these steps:
     SEPOLIA_URL=your_sepolia_rpc_url
     PRIVATE_KEY=your_private_key
     ```
-
+    
     Replace `your_sepolia_rpc_url` with your own Sepolia network URL (e.g., from Infura or Alchemy), and `your_private_key` with the private key of your Sepolia account.
 
 3. Here's the `hardhat.config.js` file you'll be using:
@@ -79,34 +80,18 @@ To interact with the blockchain and deploy smart contracts, follow these steps:
           url: "http://127.0.0.1:8545/",
         },
         infuraSep: {
-          url: SEPOLIA_URL || "http://127.0.0.1:8545/",
-          accounts: [PRIVATE_KEY] || ["0x..."], // fallback local account
+          url: SEPOLIA_URL,
+          accounts: [PRIVATE_KEY]
         },
       },
       solidity: "0.8.20",
     };
     ```
 
-### 🛠️ Smart Contract Deployment with Hardhat Ignition
-
-1. **Deploy on Sepolia network** (make sure your `.env` is configured):
-    ```bash
-    npx hardhat ignition deploy ignition/modules/Cert.js
-    ```
-
-2. **Deploy on localhost** (ensure you're running `npx hardhat node`):
-    ```bash
-    npx hardhat ignition deploy ignition/modules/Cert.js --network localhost
-    ```
-
 ### 🔑 Important Notes
 
 - Make sure to replace the Sepolia URL and private key in the `.env` file with your own credentials for secure transaction handling.
 - Alternatively, use the `localhost` network by running `npx hardhat node` for local testing without interacting with Sepolia.
-
-## 📖 Learn More
-
-For more information on Hardhat, visit the [official Hardhat documentation](https://hardhat.org/getting-started).
 
 
 ## 🤝 Contributing
