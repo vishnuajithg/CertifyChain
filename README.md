@@ -26,6 +26,8 @@ Watch the full demo of CertifyChain on YouTube:
 
 To run the project locally, follow these steps:
 
+### 🚀 Frontend Setup
+
 1. Clone the repository:
     ```bash
     git clone https://github.com/vishnuajithg/CertifyChain.git
@@ -42,6 +44,68 @@ To run the project locally, follow these steps:
     ```bash
     npm run dev
     ```
+
+### 🔗 Smart Contract Setup with Hardhat
+
+To interact with the blockchain and deploy smart contracts, follow these steps:
+
+1. Install Hardhat and the required dependencies:
+    ```bash
+    npm install --save-dev hardhat @nomicfoundation/hardhat-toolbox dotenv
+    ```
+
+2. Set up your environment variables by creating a `.env` file in the root of the project with the following content:
+    ```bash
+    SEPOLIA_URL=your_sepolia_rpc_url
+    PRIVATE_KEY=your_private_key
+    ```
+
+    Replace `your_sepolia_rpc_url` with your own Sepolia network URL (e.g., from Infura or Alchemy), and `your_private_key` with the private key of your Sepolia account.
+
+3. Here's the `hardhat.config.js` file you'll be using:
+
+    ```javascript
+    require("@nomicfoundation/hardhat-toolbox");
+    require("dotenv").config();
+    const SEPOLIA_URL = process.env.SEPOLIA_URL;
+    const PRIVATE_KEY = process.env.PRIVATE_KEY;
+
+    module.exports = {
+      defaultNetwork: "infuraSep",
+      networks: {
+        localhost: {
+          url: "http://127.0.0.1:8545/",
+        },
+        infuraSep: {
+          url: SEPOLIA_URL || "http://127.0.0.1:8545/",
+          accounts: [PRIVATE_KEY] || ["0x..."], // fallback local account
+        },
+      },
+      solidity: "0.8.20",
+    };
+    ```
+
+### 🛠️ Smart Contract Deployment with Hardhat Ignition
+
+1. **Deploy on Sepolia network** (make sure your `.env` is configured):
+    ```bash
+    npx hardhat ignition deploy ignition/modules/Cert.js
+    ```
+
+2. **Deploy on localhost** (ensure you're running `npx hardhat node`):
+    ```bash
+    npx hardhat ignition deploy ignition/modules/Cert.js --network localhost
+    ```
+
+### 🔑 Important Notes
+
+- Make sure to replace the Sepolia URL and private key in the `.env` file with your own credentials for secure transaction handling.
+- Alternatively, use the `localhost` network by running `npx hardhat node` for local testing without interacting with Sepolia.
+
+## 📖 Learn More
+
+For more information on Hardhat, visit the [official Hardhat documentation](https://hardhat.org/getting-started).
+
 
 ## 🤝 Contributing
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.

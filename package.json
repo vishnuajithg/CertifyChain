@@ -1,0 +1,17 @@
+{
+  "name": "certifychain",
+  "version": "1.0.0",
+  "description": "**CertifyChain** is a blockchain-enabled certificate issuance platform designed to securely issue, view, and verify certificates. With CertifyChain, certificates are immutably recorded on the blockchain, ensuring authenticity and transparency. Users can easily issue certificates, and recipients or third parties can verify them using the certificate ID. This decentralized approach eliminates the risk of certificate fraud and provides a reliable way to confirm the legitimacy of credentials.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
