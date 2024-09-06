@@ -17,6 +17,31 @@ CertifyChain was developed to address the challenges of certificate authenticity
  ![Hardhat](https://img.shields.io/badge/Hardhat-ff6c37?style=flat&logo=hardhat&logoColor=white)
 
 
+## 🎞️ Demo Video
+
+Watch the full demo of CertifyChain on YouTube:  
+[CertifyChain Demo: Secure Blockchain-Powered Certificate Issuance & Verification](https://youtu.be/HcLNTSJdaNY)
+
+## ⚙️ Getting Started
+
+To run the project locally, follow these steps:
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/vishnuajithg/CertifyChain.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd CertiApp_UI
+    ```
+3. Install the dependencies:
+    ```bash
+    npm install
+    ```
+4. Start the project:
+    ```bash
+    npm run dev
+    ```
 
 ## 🤝 Contributing
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
@@ -30,5 +55,5 @@ Push to the Branch (git push origin feature/<feature_name>)
 Open a Pull Request
 
 ## 📄 License
-This project is licensed under the MIT license - see the LICENSE.md file for details.
+This project is licensed under the MIT license - see the [LICENSE](LICENSE) file for details.
 
