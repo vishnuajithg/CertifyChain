@@ -53,7 +53,7 @@ To interact with the blockchain and deploy smart contracts, follow these steps:
 
 1. Install Hardhat and the required dependencies:
     ```bash
-    npm install --save-dev hardhat @nomicfoundation/hardhat-toolbox dotenv
+    npm install -D hardhat @nomicfoundation/hardhat-toolbox dotenv
     ```
 
 2. Set up your environment variables by creating a `.env` file in the root of the project with the following content:
