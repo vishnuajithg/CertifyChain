@@ -20,7 +20,7 @@ CertifyChain was developed to address the challenges of certificate authenticity
 ## 🎞️ Demo Video
 
 Watch the full demo of CertifyChain on YouTube:  
-[CertifyChain Demo: Secure Blockchain-Powered Certificate Issuance & Verification](https://youtu.be/HcLNTSJdaNY)
+[CertifyChain Demo: Secure Blockchain-Powered Certificate Issuance & Verification](https://youtu.be/WaH6A0wGXLA)
 
 ##### Try 201 as Certificate ID as demo 
 
